@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos$cambio_ingresos, datos$nse)), caption = ""Cambios sufridos en los ingresos del hogar según NSE (absolutos)""), latex_options = ""HOLD_position"")"

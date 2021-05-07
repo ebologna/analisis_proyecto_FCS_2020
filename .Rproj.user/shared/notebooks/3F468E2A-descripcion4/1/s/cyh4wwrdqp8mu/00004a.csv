@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos$prestacion_estatal, datos$nse)), caption = ""Percepción de prestaciones por NSE (absolutos)""), latex_options = ""HOLD_position"")"

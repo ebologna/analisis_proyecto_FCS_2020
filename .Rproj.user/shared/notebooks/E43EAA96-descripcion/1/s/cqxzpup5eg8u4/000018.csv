@@ -1,0 +1,4 @@
+"0",""
+"0","kable_styling(column_spec(kable(addmargins(table(datos$dificultades_trabajo)), caption = ""Dificultades para el trabajo (absolutos)"", col.names = "
+"0","                      c(""dificultades"", ""casos"")),"
+"0","                    1, width = ""13cm""), latex_options = ""HOLD_position"")"

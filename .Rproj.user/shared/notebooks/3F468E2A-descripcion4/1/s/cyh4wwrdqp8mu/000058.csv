@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos$`La vivienda de su casa cuenta con [Gas Natural]`, datos$nse)), caption = ""Servicio de gas natural en la vivienda según NSE (absolutos)""), latex_options = ""HOLD_position"")"

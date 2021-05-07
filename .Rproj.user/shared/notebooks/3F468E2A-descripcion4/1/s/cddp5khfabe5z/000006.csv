@@ -1,0 +1,5 @@
+"0","# ¿faltan las distancias de los otros niveles?"
+"0","datos$`14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Pre escolar]`<-as.factor(datos$`14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Pre escolar]`)"
+"0","levels(datos$`14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Pre escolar]`)<-c(""Entre 1 y 15 cuadras"", ""Entre 15 y 40 cuadras"", ""Más de 40 cuadras"")"
+"0",""
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Pre escolar]`, datos$nse),2),2),1),3), caption = ""Distancia establecimiento preescolar (porcentajes según NSE)""), latex_options = ""HOLD_position"")"

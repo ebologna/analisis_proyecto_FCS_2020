@@ -1,0 +1,396 @@
+---
+title: "Resultados descriptivos"
+output: pdf_document
+
+---
+
+```{r setup, include=FALSE,echo = FALSE, warning = FALSE, message = FALSE}
+library(kableExtra)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r echo=F, message=FALSE, warning=FALSE, include=F}
+rm(list=ls())
+library(reshape2)
+library(kableExtra)
+library(tidyverse)
+library(tidyselect)
+datos_jp = read.table("datos_tablas.txt", header = T, sep = "\t")
+datos_jp$X = NULL
+```
+
+
+
+```{r message=FALSE, warning=FALSE}
+x <- list()
+i = 10
+for(i in 2:ncol(datos_jp)){
+datos_ = datos_jp[,c(1,i)]
+datos_[[2]]= trimws(datos_[[2]], which = "l")
+datos_[[2]] = gsub(", ", ",", datos_[[2]])
+valores <- na.omit(unique(unlist(strsplit(as.character(datos_[[2]]), ","))))
+ver = separate(datos_, vars_pull(names(datos_), 2), into = as.character(c(1:length(valores))), sep =",")
+tabla = melt(ver, id.vars = c("nse"), na.rm = TRUE)
+
+
+tabla = kable_styling(column_spec(kable(100*round(
+  addmargins(
+    prop.table(
+      addmargins(
+        table(tabla$value, tabla$nse),
+        2),2),1),3), 
+  caption = paste("Variable - ",names(datos_)[[2]],"(porcentajes por NSE)")),  1, width="5cm"),
+  latex_options = "HOLD_position")
+assign(paste0("tabla",i), tabla)
+x[[paste("Tabla de frecuencias relativas de la variable",names(datos_)[[2]])]] <- get(paste0("tabla",i))
+tabla
+}
+```
+
+
+
+
+```{r message=FALSE, warning=FALSE}
+load("G:/Mi unidad/proyecto_FCS_diciembre_2020/resultados/datos.Rda")
+datos$nse<-as.factor(datos$`Nivel Socio Económico`)
+
+datos$nse<-factor(datos$nse, levels=c("01. Alto", "02. Medio alto", "03.Medio",
+                                    "0.4 Medio Bajo", "0.5  Bajo"))
+levels(datos$nse)<-c("Alto", "Medio alto", "Medio",
+                    "Medio Bajo", "Bajo")
+
+
+datos$ingreso<-
+  datos$`6.1 Me puede decir en promedio, ¿Cuáles son los ingresos totales por mes en el hogar?`
+  
+         
+
+datos$ingreso<-
+  factor(datos$`6.1 Me puede decir en promedio, ¿Cuáles son los ingresos totales por mes en el hogar?`,
+         levels=c("Menos de $25.000", "Entre $25000 y 55.000", "Entre $55.000 y $99.000", "Entre $100.000 y $200.000", "Más de $200.000"))
+
+
+datos$cambio_ingresos<-as.factor(
+  datos$`6.4 Ahora le voy a preguntar ¿qué pasó con los ingresos familiares durante la pandemia? Le voy a dar algunas opciones y debe indicarme una…`)
+
+levels(datos$cambio_ingresos)<-c("aumento", "disminución", "variables",
+                     "sin cambio, igual trabajo", "sin cambio, más trabajo")
+
+
+datos$tipo_trabajo<-as.factor(datos$`7.3 ¿El trabajo de la persona que aporta el ingreso principal en el hogar, es de…? (leer opciones)`)
+
+datos$prestacion_estatal<-as.factor(datos$`7.4 ¿Algún miembro del hogar percibió alguna de las prestaciones del Estado durante la Pandemia?`)
+
+
+datos$suficiencia_ingresos_antes<-as.factor(datos$`8.1 Antes de la pandemia, ¿los ingresos del hogar eran?`)
+
+datos$suficiencia_ingresos_ahora<-as.factor(datos$`8.2 Y durante la pandemia, ¿los ingresos del hogar son?`)
+
+datos$conformidad_trabajo_antes<-as.factor(datos$`8.3 Antes de la pandemia, ¿cuán conforme estaba con la situación laboral de los miembros de su hogar?`)
+levels(datos$conformidad_trabajo_antes)<-c("Conforme", "Disconforme", "Muy conforme")
+datos$conformidad_trabajo_antes<-
+  factor(datos$conformidad_trabajo_antes, levels=c("Muy conforme", "Conforme", "Disconforme"))
+
+datos$conformidad_trabajo_ahora<-as.factor(datos$`8.4 Actualmente, ¿cómo se siente con la situación laboral de su familia?`)
+levels(datos$conformidad_trabajo_ahora)<-c("Igual", "Mejor", "Peor")
+
+
+datos$dificultades_trabajo<-as.factor(datos$`8.5 ¿Tuvieron durante la pandemia algunas de las siguientes dificultades para llevar adelante su trabajo?`)
+
+datos<-separate(
+  datos,
+  `8.5 ¿Tuvieron durante la pandemia algunas de las siguientes dificultades para llevar adelante su trabajo?`,
+  c("dificultad_trabajo_1","dificultad_trabajo_2",
+    "dificultad_trabajo_3","dificultad_trabajo_4",
+    "dificultad_trabajo_5","dificultad_trabajo_6","dificultad_trabajo_7"),
+  sep = ",",
+  remove = FALSE,
+  convert = FALSE,
+  extra = "warn",
+  fill = "warn")
+
+datos$dificultad_trabajo_1<-as.factor(datos$dificultad_trabajo_1)
+datos$dificultad_trabajo_2<-as.factor(datos$dificultad_trabajo_2)
+datos$dificultad_trabajo_3<-as.factor(datos$dificultad_trabajo_3)
+datos$dificultad_trabajo_4<-as.factor(datos$dificultad_trabajo_4)
+datos$dificultad_trabajo_5<-as.factor(datos$dificultad_trabajo_5)
+datos$dificultad_trabajo_6<-as.factor(datos$dificultad_trabajo_6)
+datos$dificultad_trabajo_7<-as.factor(datos$dificultad_trabajo_7)
+
+
+
+
+```
+
+# Descripción general  
+
+```{r}
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`1.2 Género`, datos$nse),2),2),1),3), caption = "Composición por género según NSE (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`1.2 Género`, datos$nse)), caption = "Composición por género según NSE (absolutos)"), latex_options = "HOLD_position")
+
+
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`1.4 Procedencia`, datos$nse),2),2),1),3), caption = "Lugar de nacimiento (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`1.4 Procedencia`, datos$nse)), caption = "Lugar de nacimiento según NSE (absolutos)"), latex_options = "HOLD_position")
+
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$ingreso, datos$nse),2),2),1),3), caption = "Ingresos del hogar según NSE (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$ingreso, datos$nse)), caption = "Ingresos del hogar según NSE (absolutos)"), latex_options = "HOLD_position")
+
+tabla4  
+
+tabla5  
+
+tabla6
+
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$tipo_trabajo, datos$nse),2),2),1),3), caption = "Tipo de trabajo por NSE (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$tipo_trabajo, datos$nse)), caption = "Tipo de trabajo por NSE (absolutos)"), latex_options = "HOLD_position")
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$prestacion_estatal, datos$nse),2),2),1),3), caption = "Percepción de prestaciones por NSE (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$prestacion_estatal, datos$nse)), caption = "Percepción de prestaciones por NSE (absolutos)"), latex_options = "HOLD_position")
+
+tabla2
+
+tabla3
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`La vivienda de su casa cuenta con [Cloacas]`, datos$nse),2),2),1),3), caption = "Servicio de cloacas en la vivienda según NSE (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`La vivienda de su casa cuenta con [Cloacas]`, datos$nse)), caption = "Servicio de cloacas en la vivienda según NSE (absolutos)"), latex_options = "HOLD_position")
+
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`La vivienda de su casa cuenta con [Gas Natural]`, datos$nse),2),2),1),3), caption = "Servicio de gas natural en la vivienda según NSE (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`La vivienda de su casa cuenta con [Gas Natural]`, datos$nse)), caption = "Servicio de gas natural en la vivienda según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+
+```{r}
+datos$`10.2 Nos podría indicar a qué distancia aproximada de su casa (en cuadras) se ubica el centro de salud que utiliza?`<-as.factor(datos$`10.2 Nos podría indicar a qué distancia aproximada de su casa (en cuadras) se ubica el centro de salud que utiliza?`)
+levels(datos$`10.2 Nos podría indicar a qué distancia aproximada de su casa (en cuadras) se ubica el centro de salud que utiliza?`)<-c("Entre 1 a 15 cuadras","Entre 15 y 40 cuadras", "Más de 40 cuadras")
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`10.2 Nos podría indicar a qué distancia aproximada de su casa (en cuadras) se ubica el centro de salud que utiliza?`, datos$nse),2),2),1),3), caption = "Distancia desde el domicilio hasta el centro de salud (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`10.2 Nos podría indicar a qué distancia aproximada de su casa (en cuadras) se ubica el centro de salud que utiliza?`, datos$nse)), caption = "Distancia desde el domicilio hasta el centro de salud según NSE (absolutos)"), latex_options = "HOLD_position")
+```
+
+
+```{r}
+datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`<-as.factor(datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`)
+levels(datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`)<-c("En transporte público con trasbordos (tomando más de un colectivo)", "En transporte público sin trasbordos", "En automóvil particular", "A pie", "En bicileta", "En motocicleta", "otros")
+
+
+kable_styling(column_spec(kable(100*round(addmargins(prop.table(addmargins(table(datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`, datos$nse),2),2),1),3), caption = "Medio de transporte para concurrir al centro de salud (porcentajes según NSE)"), 1, width="5cm"), latex_options = "HOLD_position")
+kable_styling(column_spec(kable(addmargins(table(datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`, datos$nse)), caption = "Medio de transporte para concurrir al centro de salud según NSE (absolutos)"), 1, width="5cm"), latex_options = "HOLD_position")
+
+```
+
+
+```{r}
+# ¿faltan las distancias de los otros niveles?
+datos$`14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Pre escolar]`<-as.factor(datos$`14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Pre escolar]`)
+levels(datos$`14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Pre escolar]`)<-c("Entre 1 y 15 cuadras", "Entre 15 y 40 cuadras", "Más de 40 cuadras")
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Pre escolar]`, datos$nse),2),2),1),3), caption = "Distancia establecimiento preescolar (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Pre escolar]`, datos$nse)), caption = "Distancia establecimiento preescolar según NSE (absolutos)"), latex_options = "HOLD_position")
+```
+
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14. En su hogar hay integrantes cursando [Jardín de infantes]`, datos$nse),2),2),1),3), caption = "Integrantes cursado jardín de infantes (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`14. En su hogar hay integrantes cursando [Jardín de infantes]`, datos$nse)), caption = "Integrantes cursado jardín de infantes según NSE (absolutos)"), latex_options = "HOLD_position")
+```
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14. En su hogar hay integrantes cursando [Primario]`, datos$nse),2),2),1),3), caption = "Integrantes cursado primario (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`14. En su hogar hay integrantes cursando [Primario]`, datos$nse)), caption = "Integrantes cursado primario según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14. En su hogar hay integrantes cursando [Secundario]`, datos$nse),2),2),1),3), caption = "Integrantes cursado secundario (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`14. En su hogar hay integrantes cursando [Secundario]`, datos$nse)), caption = "Integrantes cursado secundario según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14. En su hogar hay integrantes cursando [Universitario o terciario]`, datos$nse),2),2),1),3), caption = "Integrantes cursado universitario o terciario (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`14. En su hogar hay integrantes cursando [Universitario o terciario]`, datos$nse)), caption = "Integrantes cursado universitario o terciario según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+# Impacto pandemia  
+
+
+
+```{r}
+
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$suficiencia_ingresos_antes, datos$nse),2),2),1),3), caption = "Ingresos antes de la pandemia (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$suficiencia_ingresos_antes, datos$nse)), caption = "Ingresos antes de la pandemia (absolutos)"), latex_options = "HOLD_position")
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$suficiencia_ingresos_ahora, datos$nse),2),2),1),3), caption = "Ingresos en pandemia (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$suficiencia_ingresos_ahora, datos$nse)), caption = "Ingresos en pandemia (absolutos)"), latex_options = "HOLD_position")
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$cambio_ingresos, datos$nse),2),2),1),3), caption = "Cambios sufridos en los ingresos del hogar según NSE (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$cambio_ingresos, datos$nse)), caption = "Cambios sufridos en los ingresos del hogar según NSE (absolutos)"), latex_options = "HOLD_position")
+
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$conformidad_trabajo_antes, datos$nse),2),2),1),3), caption = "Trabajo de los integrantes del hogar antes de la pandemia (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$conformidad_trabajo_antes, datos$nse)), caption = "Trabajo de los integrantes del hogar antes de la pandemia (absolutos)"), latex_options = "HOLD_position")
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$conformidad_trabajo_ahora, datos$nse),2),2),1),3), caption = "Trabajo de los integrantes del hogar en pandemia (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$conformidad_trabajo_ahora, datos$nse)), caption = "Trabajo de los integrantes del hogar en pandemia (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+
+
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`9.2 Si tuviera que describir  cómo le resultó sobrellevar las  actividades laborales, domésticas, de cuidado de personas y acompañamiento escolar de hijxs en el último año`, datos$nse),2),2),1),3), caption = "cómo le resultó sobrellevar las actividades laborales, domésticas, de cuidado de personas y acompañamiento escolar de hijos en el último año (porcentajes por NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$prestacion_estatal, datos$nse)), caption = "cómo le resultó sobrellevar las actividades laborales, domésticas, de cuidado de personas y acompañamiento escolar de hijos en el último año por NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+
+
+```{r}
+datos$`12.1 Durante la pandemia, ¿Ud o su familia tuvieron problemas de salud que demandaran atención médica?`<-as.factor(datos$`12.1 Durante la pandemia, ¿Ud o su familia tuvieron problemas de salud que demandaran atención médica?`)
+levels(datos$`12.1 Durante la pandemia, ¿Ud o su familia tuvieron problemas de salud que demandaran atención médica?`)<-c("No", "No", "Ns/Nc", "Si")
+ 
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`12.1 Durante la pandemia, ¿Ud o su familia tuvieron problemas de salud que demandaran atención médica?`, datos$nse),2),2),1),3), caption = "Necesidad de atención médica durante la pandemia (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`12.1 Durante la pandemia, ¿Ud o su familia tuvieron problemas de salud que demandaran atención médica?`, datos$nse)), caption = "Necesidad de atención médica durante la pandemia según NSE (absolutos)"), latex_options = "HOLD_position")
+```
+
+```{r}
+datos$`12.2. Y en ese contexto, ¿tuvieron dificultades para acceder a los servicios de salud?`<-as.factor(datos$`12.2. Y en ese contexto, ¿tuvieron dificultades para acceder a los servicios de salud?`)
+levels(datos$`12.2. Y en ese contexto, ¿tuvieron dificultades para acceder a los servicios de salud?`)<-c("No", "Ns/Nc", "Si")
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`12.2. Y en ese contexto, ¿tuvieron dificultades para acceder a los servicios de salud?`, datos$nse),2),2),1),3), caption = "Dificultad de acceso a servicios de salud (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`12.2. Y en ese contexto, ¿tuvieron dificultades para acceder a los servicios de salud?`, datos$nse)), caption = "Dificultad de acceso a servicios de salud según NSE (absolutos)"), latex_options = "HOLD_position")
+```
+
+```{r}
+datos$`12.4 ¿Algún integrante de su familia tuvo COVID19?`<-as.factor(datos$`12.4 ¿Algún integrante de su familia tuvo COVID19?`)
+levels(datos$`12.4 ¿Algún integrante de su familia tuvo COVID19?`)<-c("No", "Si")
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`12.4 ¿Algún integrante de su familia tuvo COVID19?`, datos$nse),2),2),1),3), caption = "Algún integrante tuvo COVID (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`12.4 ¿Algún integrante de su familia tuvo COVID19?`, datos$nse)), caption = "Algún integrante tuvo COVID según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+```{r}
+datos$`12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?`<-as.factor(datos$`12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?`)
+levels(datos$`12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?`)<-
+  c("Dispensario barrial", "Dispensario barrial y Hospital público", "Hospital público", "Hospital público y Clínica privada", "Clínica privada", "A ningún lado" )
+
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?`, datos$nse),2),2),1),3), caption = "Lugar de atención ante síntomas COVID (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?`, datos$nse)), caption = "Lugar de atención ante síntomas COVID según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`13.1  ¿Considera que tuvo información suficiente sobre los programas y servicios de salud durante la cuarentena? (leer opciones)`, datos$nse),2),2),1),3), caption = "Información suficiente sobre los programas y servicios de salud durante la cuarentena (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`13.1  ¿Considera que tuvo información suficiente sobre los programas y servicios de salud durante la cuarentena? (leer opciones)`, datos$nse)), caption = "Información suficiente sobre los programas y servicios de salud durante la cuarentena según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Pre escolar]`, datos$nse),2),2),1),3), caption = "Continuidad educativa durante pandemia, preescolar (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Pre escolar]`, datos$nse)), caption = "Continuidad educativa durante pandemia, preescolar según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Primario]`, datos$nse),2),2),1),3), caption = "Continuidad educativa durante pandemia, primario (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Primario]`, datos$nse)), caption = "Continuidad educativa durante pandemia, primario según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Secundario]`, datos$nse),2),2),1),3), caption = "Continuidad educativa durante pandemia, secundario (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Secundario]`, datos$nse)), caption = "Continuidad educativa durante pandemia, secundario según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Terciario o universitario]`, datos$nse),2),2),1),3), caption = "Continuidad educativa durante pandemia, terciario o universitario (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Terciario o universitario]`, datos$nse)), caption = "Continuidad educativa durante pandemia, terciario o universitario según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+
+
+```{r}
+
+# problemas para sostener educación no presencial
+conectividad<-table(datos$`15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.1 Falta de conectividad / falta de datos para sostener las actividades virtuales – Si - No]`, datos$nse)
+
+falta_dispositivo<-table(datos$`15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.2 No tener dispositivos digitales para sostener las actividades – Si - No]`, datos$nse)
+
+insuficiencia_dispositivos<-table(datos$`15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.3 Dispositivos digitales insuficientes para sostener las actividades de los distintos miembros del hogar – Si - No]`, datos$nse)
+
+falta_espacios<-table(datos$`15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.4 Dificultades vinculadas a la falta de espacios adecuados para que los distintos miembros del hogar sostengan la continuidad – Si - No]`, datos$nse)
+
+conocimiento_dispositivos<-table(datos$`15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.5 Dificultades en el conocimiento sobre dispositivos digitales de los padres y personas mayores para acompañar a quienes se están educando – Si - No]`, datos$nse)
+
+pago_cuotas<-table(datos$`15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.6 Dificultades económicas para sostener cuotas escolares – Si - No]`, datos$nse)
+
+tiempo_adultos_para_apoyo<-table(datos$`15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.7 Dificultades de tiempo de los adultos para acompañar a los estudiantes del hogar – Si - No]`, datos$nse)
+
+otras<-table(datos$`15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.8 Otras]`, datos$nse)
+
+# para denominadores
+v<-table(datos$nse)
+conectividad<-100*round(conectividad[1:5]/v[1:5],3)
+conocimiento_dispositivos<-100*round(conocimiento_dispositivos[1:5]/v[1:5],3)
+falta_dispositivo<-100*round(falta_dispositivo[1:5]/v[1:5],3)
+falta_espacios<-100*round(falta_espacios[1:5]/v[1:5],3)
+insuficiencia_dispositivos<-100*round(insuficiencia_dispositivos[1:5]/v[1:5],3)
+otras<-100*round(otras[1:5]/v[1:5],3)
+pago_cuotas<-100*round(pago_cuotas[1:5]/v[1:5],3)
+tiempo_adultos_para_apoyo<-100*round(tiempo_adultos_para_apoyo[1:5]/v[1:5],3)
+
+
+u<-rbind(conectividad,falta_dispositivo, insuficiencia_dispositivos,
+         falta_espacios, conocimiento_dispositivos, pago_cuotas, tiempo_adultos_para_apoyo, otras)
+kable(u, caption = "Dificultades para sostener la continuidad educativa durante la virtualidad (porcentaje de afectados según NSE) ")
+
+```
+
+```{r}
+kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`16.1 Durante la vigencia del aislamiento, ¿considera que la información obtenida sobre las medidas educativas en relación a los miembros de su hogar fue...?`, datos$nse),2),2),1),3), caption = "Información disponible durante la pandemia (porcentajes según NSE)"), latex_options = "HOLD_position")
+kable_styling(kable(addmargins(table(datos$`16.1 Durante la vigencia del aislamiento, ¿considera que la información obtenida sobre las medidas educativas en relación a los miembros de su hogar fue...?`, datos$nse)), caption = "Información disponible durante la pandemia según NSE (absolutos)"), latex_options = "HOLD_position")
+
+```
+
+<!--desde acá las de JP-->
+
+
+
+<br></br>
+
+# Tablas de frecuencias de las variables seleccionadas.
+
+```{r}
+
+tabla3
+tabla4
+tabla5
+tabla6
+tabla7
+tabla8
+tabla9
+tabla10
+tabla11
+tabla12
+```
+
+
+<br></br>
+

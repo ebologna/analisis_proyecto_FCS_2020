@@ -1,0 +1,4 @@
+"0",""
+"0",""
+"0","kable_styling(kable(addmargins(table(datos$tipo_conexion, datos$nse)"
+"0","), caption = ""Tipo de conexión a Internet en el hogar según NSE (absolutos)""), latex_options = ""HOLD_position"")"

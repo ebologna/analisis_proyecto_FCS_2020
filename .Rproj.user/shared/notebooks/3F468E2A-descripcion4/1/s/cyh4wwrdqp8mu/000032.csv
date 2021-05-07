@@ -1,0 +1,4 @@
+"0",""
+"0",""
+"0",""
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`1.4 Procedencia`, datos$nse),2),2),1),3), caption = ""Lugar de nacimiento (porcentajes según NSE)""), latex_options = ""HOLD_position"")"

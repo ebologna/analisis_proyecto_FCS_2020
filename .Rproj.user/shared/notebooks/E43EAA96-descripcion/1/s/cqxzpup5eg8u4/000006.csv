@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos$suficiencia_ingresos_antes, datos$nse)), caption = ""Ingresos antes de la pandemia (absolutos)""), latex_options = ""HOLD_position"")"

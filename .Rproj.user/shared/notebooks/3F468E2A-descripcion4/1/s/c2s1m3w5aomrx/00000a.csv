@@ -1,0 +1,1 @@
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`16.1 Durante la vigencia del aislamiento, ¿considera que la información obtenida sobre las medidas educativas en relación a los miembros de su hogar fue...?`, datos$nse),2),2),1),3), caption = ""Información disponible durante la pandemia (porcentajes según NSE)""), latex_options = ""HOLD_position"")"

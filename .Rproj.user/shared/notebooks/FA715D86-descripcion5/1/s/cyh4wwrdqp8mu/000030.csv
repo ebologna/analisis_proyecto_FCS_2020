@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos$`1.2 Género`, datos$nse)), caption = ""Composición por género según NSE (absolutos)""), latex_options = ""HOLD_position"")"

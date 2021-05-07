@@ -1,0 +1,7 @@
+"0","rm(list=ls())"
+"0","library(reshape2)"
+"0","library(kableExtra)"
+"0","library(tidyverse)"
+"0","library(tidyselect)"
+"0","datos = read.table(""datos_tablas.txt"", header = T, sep = ""\t"")"
+"0","datos$X = NULL"

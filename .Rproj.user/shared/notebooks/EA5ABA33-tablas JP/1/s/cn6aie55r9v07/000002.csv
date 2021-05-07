@@ -1,0 +1,80 @@
+"0","pander::pander(x)"
+"1","
+
+  * **Tabla de frecuencias relativas de la variable fuente_ingresos_02**:
+
+    ---------------------------
+     Valores   casos    freq
+    --------- ------- ---------
+        0       531    86.34 %
+
+        1       84     13.66 %
+    ---------------------------
+
+  * **Tabla de frecuencias relativas de la variable fuente_ingresos_03**:
+
+    ---------------------------
+     Valores   casos    freq
+    --------- ------- ---------
+        0       576    93.66 %
+
+        1       39     6.34 %
+    ---------------------------
+
+  * **Tabla de frecuencias relativas de la variable fuente_ingresos_04**:
+
+    ---------------------------
+     Valores   casos    freq
+    --------- ------- ---------
+        0       359    58.37 %
+
+        1       256    41.63 %
+    ---------------------------
+
+  * **Tabla de frecuencias relativas de la variable fuente_ingresos_05**:
+
+    ---------------------------
+     Valores   casos    freq
+    --------- ------- ---------
+        0       596    96.91 %
+
+        1       19     3.09 %
+    ---------------------------
+
+  * **Tabla de frecuencias relativas de la variable cobertura_salud_01**:
+
+    -------------------------
+     Valores   casos   freq
+    --------- ------- -------
+        0       615    100 %
+    -------------------------
+
+  * **Tabla de frecuencias relativas de la variable cobertura_salud_02**:
+
+    -------------------------
+     Valores   casos   freq
+    --------- ------- -------
+        0       615    100 %
+    -------------------------
+
+  * **Tabla de frecuencias relativas de la variable cobertura_salud_03**:
+
+    -------------------------
+     Valores   casos   freq
+    --------- ------- -------
+        0       615    100 %
+    -------------------------
+
+  * **Tabla de frecuencias relativas de la variable cobertura_salud_04**:
+
+    -------------------------
+     Valores   casos   freq
+    --------- ------- -------
+        0       615    100 %
+    -------------------------
+
+
+<!-- end of list -->
+
+
+"

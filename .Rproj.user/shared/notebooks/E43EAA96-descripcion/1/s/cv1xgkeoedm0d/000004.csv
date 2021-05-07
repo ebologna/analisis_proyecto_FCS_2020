@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos$prestacion_estatal, datos$nse)), caption = ""cómo le resultó sobrellevar las actividades laborales, domésticas, de cuidado de personas y acompañamiento escolar de hijos en el último año por NSE (absolutos)""), latex_options = ""HOLD_position"")"

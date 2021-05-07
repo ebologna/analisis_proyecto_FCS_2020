@@ -1,0 +1,48 @@
+---
+title: "tablas"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE, message = FALSE)
+```
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(kableExtra)
+```
+
+
+
+```{r}
+load("G:/Mi unidad/proyecto_FCS_diciembre_2020/resultados/datos.Rda")
+for(i in 1:ncol(datos)){
+freq = datos %>% 
+  group_by(datos[,i]) %>% 
+  summarise(n = n(),
+            freq = n / nrow(datos)) %>% 
+  as.data.frame()
+assign(paste0("freq",i), freq)
+}
+```
+
+
+
+```{r}
+tablas<-list(freq5, freq6, freq7,freq8, freq9, freq10,freq11, freq12, freq13)
+kable(tablas[1])
+kable(tablas[2])
+kable(tablas[3])
+kable(tablas[4])
+kable(tablas[5])
+kable(tablas[6])
+kable(tablas[7])
+kable(tablas[8])
+kable(tablas[9])
+
+
+
+```
+

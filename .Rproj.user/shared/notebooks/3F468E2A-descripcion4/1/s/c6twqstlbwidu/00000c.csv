@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos$`12.4 ¿Algún integrante de su familia tuvo COVID19?`, datos$nse)), caption = ""Algún integrante tuvo COVID según NSE (absolutos)""), latex_options = ""HOLD_position"")"

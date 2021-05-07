@@ -1,0 +1,6 @@
+"0",""
+"0","datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`<-as.factor(datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`)"
+"0","levels(datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`)<-c(""En transporte público con trasbordos (tomando más de un colectivo)"", ""En transporte público sin trasbordos"", ""En automóvil particular"", ""A pie"", ""En bicileta"", ""En motocicleta"", ""otros"")"
+"0",""
+"0",""
+"0","kable_styling(column_spec(kable(100*round(addmargins(prop.table(addmargins(table(datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`, datos$nse),2),2),1),3), caption = ""Medio de transporte para concurrir al centro de salud (porcentajes según NSE)""), 1, width=""5cm""), latex_options = ""HOLD_position"")"

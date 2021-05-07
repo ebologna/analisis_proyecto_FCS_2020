@@ -1,0 +1,1 @@
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Terciario o universitario]`, datos$nse),2),2),1),3), caption = ""Continuidad educativa durante pandemia, terciario o universitario (porcentajes según NSE)""), latex_options = ""HOLD_position"")"

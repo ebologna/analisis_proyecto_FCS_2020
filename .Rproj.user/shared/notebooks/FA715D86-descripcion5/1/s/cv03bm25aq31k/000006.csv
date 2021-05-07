@@ -1,0 +1,2 @@
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`5.1 En su hogar, tienen alguno de los dispositivos tecnológicos que voy a nombrarle? [Smart TV]`, datos$nse)"
+"0",",2),2),1),3), caption = ""Existencia de smart TV en el hogar según NSE (porcentajes por NSE)""), latex_options = ""HOLD_position"")"

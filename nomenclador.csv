@@ -1,0 +1,239 @@
+nro;acciones;nuevos_nombres;nombres
+1;ok;tiempo;Marca temporal
+2;ok;encuestador;Encuestador
+3;ok;NSSE;Nivel Socio Económico
+4;ok;edad;1.1 Edad
+5;ok;genero;1.2 Género
+6;ok;tiene_DNI;1.3 Actualmente, tiene DNI?
+7;ok;procedencia;1.4 Procedencia
+8;ok;estado_civil;1.5 Estado civil
+9;ok;tiene_electricidad;La vivienda de su casa cuenta con [Luz Eléctrica]
+10;ok;tiene_gas_natural;La vivienda de su casa cuenta con [Gas Natural]
+11;ok;tiene_gas_envasado;La vivienda de su casa cuenta con [Gas envasado]
+12;ok;tiene_agua_potable;La vivienda de su casa cuenta con [Agua potable]
+13;ok;tiene_cloacas;La vivienda de su casa cuenta con [Cloacas]
+14;ok;como_calefacciona;2.2 ¿Con qué calefaccionan mayormente su casa? 
+15;ok;no;2.2 ¿Para calefaccionar su casa, utilizan principalmente: [Aparatos a gas envasado]
+16;ok;no;2.2 ¿Para calefaccionar su casa, utilizan principalmente: [Aparatos a leña / carbón]
+17;ok;no;2.2 ¿Para calefaccionar su casa, utilizan principalmente: [Aparatos a electricidad]
+18;ok;no;2.2 ¿Para calefaccionar su casa, utilizan principalmente: [Aparatos a kerosene]
+19;ok;no;2.2 ¿Para calefaccionar su casa, utilizan principalmente: [No tiene aparatos para calefaccionar]
+20;ok;tiene_aire_acondicionado;Tienen aire acondicionado?
+21;ok;no;3.1.1 Cantidad de integrantes del hogar
+22;ok;cantidad_integrantes_con_cobertura_salud;3.1 Cuántos integrantes del hogar tienen cobertura de salud? Como obra social, prepaga o pami
+23;separar;cobertura_salud;3.2 Alguno de los integrantes del hogar tiene... (marcar todas las que señalen)
+24;dummy;cobertura_salud_01;cobertura_salud_no_tiene
+25;dummy;cobertura_salud_02;cobertura_salud_obra_social_sindicato
+26;dummy;cobertura_salud_03;cobertura_salud_pami
+27;dummy;cobertura_salud_04;cobertura_salud_prepaga
+28;dummy;cobertura_salud_05;cobertura_salud_pago_voluntario
+29;dummy;cobertura_salud_06;cobertura_salud_profe
+30;dummy;cobertura_salud_07;cobertura_salud_otra
+31;dummy;cobertura_salud_08;cobertura_salud_nsnc
+32;separar;alcance_cobertura_salud;3.3 Su cobertura de salud alcanza para:
+33;dummy;alcance_cobertura_salud_01;alcance_cobertura_salud_basica
+34;dummy;alcance_cobertura_salud_02;alcance_cobertura_salud_analisis
+35;dummy;alcance_cobertura_salud_03;alcance_cobertura_salud_radiografias
+36;dummy;alcance_cobertura_salud_04;alcance_cobertura_salud_complejidad
+37;dummy;alcance_cobertura_salud_05;alcance_cobertura_salud_odontologia
+38;dummy;alcance_cobertura_salud_06;alcance_cobertura_salud_mental
+39;dummy;alcance_cobertura_salud_07;alcance_cobertura_salud_reproductiva
+40;dummy;alcance_cobertura_salud_08;alcance_cobertura_salud_anteojos
+41;dummy;alcance_cobertura_salud_09;alcance_cobertura_salud_protesis
+42;dummy;alcance_cobertura_salud_10;alcance_cobertura_salud_piezas_dent
+43;dummy;alcance_cobertura_salud_11;alcance_cobertura_salud_varios
+44;dummy;alcance_cobertura_salud_12;alcance_cobertura_salud_nsnc
+45;ok;tiene_servicio_emergencia;3.4 Cuenta con un servicio médico de emergencia a domicilio? 
+46;ok;tiene_ambulancia;3.5 En caso de urgencias, puede acudir a un servicio de ambulancia?
+47;ok;tiene_tel_fijo;4.1 En su hogar cuentan con [Telefonía fija]
+48;ok;tiene_celular;4.1 En su hogar cuentan con [Telefonía celular]
+49;ok;tiene_internet;4.2 En su casa cuentan con conectividad a internet a través de 
+50;ok;cambio_acceso_internet;4.3 En el último año, adquirieron nuevos paquetes o mejoraron el acceso a la conectividad?
+51;ok;tiene_PC;5.1 En su hogar, tienen alguno de los dispositivos tecnológicos que voy a nombrarle? [PC de escritorio]
+52;ok;tiene_notebook;5.1 En su hogar, tienen alguno de los dispositivos tecnológicos que voy a nombrarle? [Notebook]
+53;ok;tiene_notebook_CI;5.1 En su hogar, tienen alguno de los dispositivos tecnológicos que voy a nombrarle? [Notebook de Conectar Igualdad]
+54;ok;tiene_tablet;5.1 En su hogar, tienen alguno de los dispositivos tecnológicos que voy a nombrarle? [Tablet / Ipad]
+55;ok;tiene_smart_TV;5.1 En su hogar, tienen alguno de los dispositivos tecnológicos que voy a nombrarle? [Smart TV]
+56;ok;tiene_impresora;5.1 En su hogar, tienen alguno de los dispositivos tecnológicos que voy a nombrarle? [Impresora]
+57;ok;tene_camara_fotos;5.1 En su hogar, tienen alguno de los dispositivos tecnológicos que voy a nombrarle? [Cámara de fotos]
+58;ok;cuantos_celulares;5.2 Cuántos teléfonos celulares hay en su hogar?
+59;ok;compro_dispositivo_ultimo_anio;5.3 ¿En el último año se adquirieron en el hogar alguno de los dispositivos que le nombré anteriormente?
+60;ok;ingresos_del_hogar;6.1 Me puede decir en promedio, ¿Cuáles son los ingresos totales por mes en el hogar? 
+61;separar;fuente_ingresos;6.2 En el último año, los ingresos de las personas provinieron de...?
+62;dummy;fuente_ingresos_01;En el último año, los ingresos de las personas provinieron de su [Trabajo]?
+63;dummy;fuente_ingresos_02;Trabajo
+64;dummy;fuente_ingresos_03;Programa estatal
+65;dummy;fuente_ingresos_04;Ayuda social o familiar
+66;dummy;fuente_ingresos_05;Jubilación/Pensión
+67;dummy;fuente_ingresos_06;Otra fuente
+68;ok;variacion_ingresos_pandemia;Indemnización por despido
+69;separar;prestaciones_estatales;6.5 ¿Cuáles de las siguientes prestaciones estatales se percibieron en el último mes en el hogar? Puede marcar todas las que correspondan
+70;dummy;prestaciones_estatales_01;AUH
+71;dummy;prestaciones_estatales_02;Seguro de desempleo
+72;dummy;prestaciones_estatales_03;Salario social complementario
+73;dummy;prestaciones_estatales_04;Otras
+74;ok;alguien_trabaja_formal;7.1 Le voy a mencionar distintas situaciones laborales y le voy a pedir que me diga si algún miembro del hogar trabaja de esa manera (leer opciones) [Formal registrada (en blanco, relación de dependencia, monotributo o autónomo)]
+75;ok;alguien_trabaja_informal;7.1 Le voy a mencionar distintas situaciones laborales y le voy a pedir que me diga si algún miembro del hogar trabaja de esa manera (leer opciones) [Informal (en negro)]
+76;ok;alguien_trabaja_cuentapropia;7.1 Le voy a mencionar distintas situaciones laborales y le voy a pedir que me diga si algún miembro del hogar trabaja de esa manera (leer opciones) [Por cuenta propia (sin registrar)]
+77;ok;alguien_trabaja_changas;7.1 Le voy a mencionar distintas situaciones laborales y le voy a pedir que me diga si algún miembro del hogar trabaja de esa manera (leer opciones) [Eventual / por changas]
+78;ok;alguien_trabaja_negocio_propio;7.1 Le voy a mencionar distintas situaciones laborales y le voy a pedir que me diga si algún miembro del hogar trabaja de esa manera (leer opciones) [Empresa o negocio propio]
+79;ok;alguien_no_trabaja_y_busca;7.1 Le voy a mencionar distintas situaciones laborales y le voy a pedir que me diga si algún miembro del hogar trabaja de esa manera (leer opciones) [No tienen trabajo pero buscan]
+80;separar;origen_ingreso_principal;7.2 ¿La persona que aporta el principal ingreso en el hogar, lo hace por?
+81;dummy;origen_ingreso_principal_01;Eventual (changas)
+82;dummy;origen_ingreso_principal_02;Trabajo formal
+83;dummy;origen_ingreso_principal_03;Trabajo informal
+84;dummy;origen_ingreso_principal_04;Jubilación/pensión
+85;dummy;origen_ingreso_principal_05;Empresa o negocio propio
+86;dummy;origen_ingreso_principal_06;Plan o programa estatal
+87;dummy;origen_ingreso_principal_07;Cobro de alquiler o renta
+88;ok;intensidad_ingreso_principal;7.3 ¿El trabajo de la persona que aporta el ingreso principal en el hogar, es de…? (leer opciones)
+89;ok;prestaciones_estatales_pandemia;7.4 ¿Algún miembro del hogar percibió alguna de las prestaciones del Estado durante la Pandemia?
+90;ok;empleo_en_pandemia;7.5 Durante el aislamiento social por la pandemia, ¿qué paso mayormente con el trabajo de los miembros de su hogar?
+91;ok;suficiencia_ingresos_pre_pandemia;8.1 Antes de la pandemia, ¿los ingresos del hogar eran?
+92;ok;suficiencia_ingresos_en_pandemia;8.2 Y durante la pandemia, ¿los ingresos del hogar son?
+93;ok;conformidad_laboral_pre_pandemia;8.3 Antes de la pandemia, ¿cuán conforme estaba con la situación laboral de los miembros de su hogar?
+94;ok;conformidad_laboral_pandemia;8.4 Actualmente, ¿cómo se siente con la situación laboral de su familia?
+95;ok;dificultades_empleo_pandemia;8.5 ¿Tuvieron durante la pandemia algunas de las siguientes dificultades para llevar adelante su trabajo?
+96;separar;solicitud_ayuda_pandemia;9.1 ¿Durante la pandemia, han solicitado algún tipo de ayuda en…?
+97;dummy;solicitud_ayuda_pandemia_01;Ninguno
+98;dummy;solicitud_ayuda_pandemia_02;Ayuda de familiares o amigos
+99;dummy;solicitud_ayuda_pandemia_03;Grupo de mujeres / Organización feminista
+100;dummy;solicitud_ayuda_pandemia_04;Agrupación o partido político
+101;dummy;solicitud_ayuda_pandemia_05;Comedor o merendero barrial
+102;dummy;solicitud_ayuda_pandemia_06;Otro
+103;dummy;solicitud_ayuda_pandemia_07;Parroquia
+104;dummy;solicitud_ayuda_pandemia_08;En la escuela
+105;dummy;solicitud_ayuda_pandemia_09;Apoyo escolar
+106;dummy;solicitud_ayuda_pandemia_10;Centro Vecinal
+107;ok;difultad_actividades_pandemia;9.2 Si tuviera que describir  cómo le resultó sobrellevar las  actividades laborales, domésticas, de cuidado de personas y acompañamiento escolar de hijxs en el último año
+108;ok;credito_pandemia;9.3Durante la pandemia, ¿debió recurrir a algunas de las siguientes opciones de créditos y financiación?
+109;ok;atencion_salud_tipo;10.1 Cuando se presenta un problema de salud a Ud. o a un miembro de su familia, ¿acuden a?: 
+110;ok;atencion_salud_distancia;10.2 Nos podría indicar a qué distancia aproximada de su casa (en cuadras) se ubica el centro de salud que utiliza?
+111;ok;atencion_salud_movilidad;10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:
+112;separar;atencion_salud_dificultades_pre_pandemia;11.1 Previo a la pandemia, tuvo alguna de las siguientes dificultades cuando necesitó algún servicio de salud? (leer opciones y marcar todas las que responda) 
+113;dummy;atencion_salud_dificultades_pre_pandemia_01;Vivir lejos de los centros de atención médica
+114;dummy;atencion_salud_dificultades_pre_pandemia_02;Dificultadese conómicas para afrontar los gastos en salud
+115;dummy;atencion_salud_dificultades_pre_pandemia_03;Tiempo de espera excesivos para acceder a la consulta
+116;dummy;atencion_salud_dificultades_pre_pandemia_04;Dificultades para entender el diagnóstico realizado por los médicos.
+117;dummy;atencion_salud_dificultades_pre_pandemia_05;Sentirse discriminado a la hora de solicitar atención por cuestiones de género
+118;dummy;atencion_salud_dificultades_pre_pandemia_06;Sentirse discriminado a la hora de solicitar atención por el barrio en el que vive
+119;dummy;atencion_salud_dificultades_pre_pandemia_07;Sentirse discriminado a la hora de solicitar atención por su nacionalidad u otras condiciones
+120;dummy;atencion_salud_dificultades_pre_pandemia_08;Dificultades para que los médicos/as entiendan sus dolencias
+121;dummy;atencion_salud_dificultades_pre_pandemia_09;No tuvo ninguna dificultad
+122;dummy;atencion_salud_dificultades_pre_pandemia_10;Otras
+123;dummy;atencion_salud_dificultades_pre_pandemia_11;No conocer dónde recurrir cuando necesita atención médica
+124;dummy;atencion_salud_dificultades_pre_pandemia_12;No conocer cómo solicitar turnos
+125;ok;atencion_salud_durante_pandemia;12.1 Durante la pandemia, ¿Ud o su familia tuvieron problemas de salud que demandaran atención médica? 
+126;ok;atencion_salud_dificultades_pandemia;12.2. Y en ese contexto, ¿tuvieron dificultades para acceder a los servicios de salud?
+127;ok;pandemia_responsabilidad;12.2.1.B)¿Quién le parece que es el responsable de esta situación?
+128;separar;atencion_salud_dificultades_pre_pandemia_detalle;12.3 Voy a leerle algunas dificultades que podrían haber aparecido al momento de buscar atención médica, y le voy a pedir que me señale todas aquellas que hayan vivido en su núcleo familiar durante el año pasado:
+129;dummy;atencion_salud_dificultades_pre_pandemia_detalle_01;Dificultades para acceder a turnos médicos por escasez de atención
+130;dummy;atencion_salud_dificultades_pre_pandemia_detalle_02;Dificultades económicas para pagar consultas
+131;dummy;atencion_salud_dificultades_pre_pandemia_detalle_03;Dificultades económicas para pagar medicamentos
+132;dummy;atencion_salud_dificultades_pre_pandemia_detalle_04;Dificultades económicas para pagar análisis médicos
+133;dummy;atencion_salud_dificultades_pre_pandemia_detalle_05;Dificultades económicas para pagar estudios y especialidades médicas
+134;dummy;atencion_salud_dificultades_pre_pandemia_detalle_06;Dificultades para llegar a algún servicio de salud por lasrestricciones a la movilidad
+135;dummy;atencion_salud_dificultades_pre_pandemia_detalle_07;Otras
+136;dummy;atencion_salud_dificultades_pre_pandemia_detalle_08;Dificultades para solicitar turnos de manera virtual por problemas en los sistemas
+137;dummy;atencion_salud_dificultades_pre_pandemia_detalle_09;Dificultades para solicitar turnos de manera virtual por falta de conectividad
+138;dummy;atencion_salud_dificultades_pre_pandemia_detalle_10;Posponer intervenciones quirúrgicas
+139;dummy;atencion_salud_dificultades_pre_pandemia_detalle_11;Termino pagando aparte una operación por problemas de la obra social
+140;dummy;atencion_salud_dificultades_pre_pandemia_detalle_12;Llamaron al servicio de emergencia y no llegó
+141;dummy;atencion_salud_dificultades_pre_pandemia_detalle_13;Dificultades para que los atiendan
+142;ok;covid_positivo;12.4 ¿Algún integrante de su familia tuvo COVID19?
+143;separar;covid_positivo_dificultades;12.6 Tuvieron dificultades para: (leer opciones)
+144;dummy;covid_positivo_dificultades_01;Acceder a información sobre síntomas
+145;dummy;covid_positivo_dificultades_02;cuidados y prevención frente al COVID19
+146;dummy;covid_positivo_dificultades_03;Ninguna de las anteriores
+147;dummy;covid_positivo_dificultades_04;Acceder al testeo en caso de tener síntomas
+148;dummy;covid_positivo_dificultades_05;Acceder al seguimiento de los servicios médicos
+149;dummy;covid_positivo_dificultades_06;Acceder a atención médica adecuada: cama para internación
+150;dummy;covid_positivo_dificultades_07;Acceder a atención médica adecuada: medicamentos
+151;dummy;covid_positivo_dificultades_08;Acceder a atención médica adecuada: oxigeno
+152;dummy;covid_positivo_dificultades_09;Acceder a atención médica adecuada: terapia intensiva
+153;dummy;covid_positivo_dificultades_10;Aislar en el hogar a las personas contagiadas
+154;ok;atencion_salud_acceso_informacion;13.1  ¿Considera que tuvo información suficiente sobre los programas y servicios de salud durante la cuarentena? (leer opciones)
+155;separar;atencion_salud_acceso_informacion_origen;13.2 ¿Nos podría decir de qué manera obtuvo ese tipo de información? (marcar todas las que señale el entrevistado)
+156;dummy;atencion_salud_acceso_informacion_origen_01;A través de familiares
+157;dummy;atencion_salud_acceso_informacion_origen_02;A traves de amigos o vecinos
+158;dummy;atencion_salud_acceso_informacion_origen_03;A través de información provista por el Estado en conferencias de prensa
+159;dummy;atencion_salud_acceso_informacion_origen_04;A través de medios masivos como television o radio
+160;dummy;atencion_salud_acceso_informacion_origen_05;A través de redes sociales como WhatsApp, Facebook o Twitter
+161;dummy;atencion_salud_acceso_informacion_origen_06;A través de los propios servicios de salud
+162;dummy;atencion_salud_acceso_informacion_origen_07;Otras
+163;ok;educ_hogar_inicial;14. En su hogar hay integrantes cursando [Jardín de infantes]
+164;ok;educ_hogar_primario;14. En su hogar hay integrantes cursando [Primario]
+165;ok;educ_hogar_secundario;14. En su hogar hay integrantes cursando [Secundario]
+166;ok;educ_hogar_universitario;14. En su hogar hay integrantes cursando [Universitario o terciario]
+167;ok;educ_hogar_inicial_establecimiento;14.2 A qué tipo de establecimiento, público o privado, asisten? [Preescolar]
+168;ok;educ_hogar_primario_establecimiento;14.2 A qué tipo de establecimiento, público o privado, asisten? [Primario]
+169;ok;educ_hogar_secundario_establecimiento;14.2 A qué tipo de establecimiento, público o privado, asisten? [Secundario ]
+170;ok;educ_hogar_universitario_establecimiento;14.2 A qué tipo de establecimiento, público o privado, asisten? [Universitario o terciario]
+171;ok;educ_hogar_inicial_distancia;14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Pre escolar]
+172;ok;educ_hogar_primario_distancia;14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Primario]
+173;ok;educ_hogar_secundario_distancia;14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Secundario]
+174;ok;educ_hogar_universitario_distancia;14.3 ¿Nos podría indicar a qué distancia aproximada (en cuadras) de su hogar se ubica el establecimiento? [Universitario o terciario]
+175;ok;educ_hogar_inicial_movilidad;"14.2	Para llevar o traer a los niños al jardín, lo hacen 14.3	Para llevar o traer los niños a la escuela... 14.4	Para ir al secundario 14.5	Para ir a la Universidad o terciario (sólo leer el nivel escolar que corresponda y leer las opciones) [Pre escolar]"
+176;ok;educ_hogar_primario_movilidad;"14.2	Para llevar o traer a los niños al jardín, lo hacen 14.3	Para llevar o traer los niños a la escuela... 14.4	Para ir al secundario 14.5	Para ir a la Universidad o terciario (sólo leer el nivel escolar que corresponda y leer las opciones) [Primario]"
+177;ok;educ_hogar_secundario_movilidad;"14.2	Para llevar o traer a los niños al jardín, lo hacen 14.3	Para llevar o traer los niños a la escuela... 14.4	Para ir al secundario 14.5	Para ir a la Universidad o terciario (sólo leer el nivel escolar que corresponda y leer las opciones) [Secundario]"
+178;ok;educ_hogar_universitario_movilidad;"14.2	Para llevar o traer a los niños al jardín, lo hacen 14.3	Para llevar o traer los niños a la escuela... 14.4	Para ir al secundario 14.5	Para ir a la Universidad o terciario (sólo leer el nivel escolar que corresponda y leer las opciones) [Universitario o terciario]"
+179;ok;educ_hogar_inicial_continuidad;14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Pre escolar]
+180;ok;educ_hogar_primario_continuidad;14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Primario]
+181;ok;educ_hogar_secundario_continuidad;14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Secundario]
+182;ok;educ_hogar_universitario_continuidad;14.6. Durante la pandemia¿ qué tipo de  continuidad educativa tuvieron? [Terciario o universitario]
+183;ok;educ_hogar_inicial_medios;"1.4.5	¿Nos podría indicar a través de qué medios se realizó esa continuidad? [Pre escolar]"
+184;ok;educ_hogar_primario_continuidad_medios;"1.4.5	¿Nos podría indicar a través de qué medios se realizó esa continuidad? [Primario]"
+185;ok;educ_hogar_secundario_medios;"1.4.5	¿Nos podría indicar a través de qué medios se realizó esa continuidad? [Secundario]"
+186;ok;educ_hogar_universitario_medios;"1.4.5	¿Nos podría indicar a través de qué medios se realizó esa continuidad? [Universitario o terciario]"
+187;ok;informacion_medidas_educativas_valoracion;16.1 Durante la vigencia del aislamiento, ¿considera que la información obtenida sobre las medidas educativas en relación a los miembros de su hogar fue...?
+188;separar;informacion_medidas_educativas_origen;16.2 ¿Nos podría indicar de qué manera logró informarse? 
+189;dummy;informacion_medidas_educativas_origen_01;A través de familiares
+190;dummy;informacion_medidas_educativas_origen_02;A través de amigos o vecinos
+191;dummy;informacion_medidas_educativas_origen_03;A través de medios masivos como television o radio
+192;dummy;informacion_medidas_educativas_origen_04;A través de redes sociales como WhatsApp, Facebook o Twitter
+193;dummy;informacion_medidas_educativas_origen_05;A través de los docentes o directivos de las instituciones educativas
+194;dummy;informacion_medidas_educativas_origen_06;A través de información provista por las autoridades del Estado en conferencias de prensa
+195;ok;fecha;Fecha
+196;ok;hora;Hora
+197;ok;id_encuesta;Número de encuesta
+198;ok;vivienda_tipo;Tipo de vivienda
+199;ok;vivienda_ambientes;Cantidad de ambientes
+200;ok;vivienda_habitacion;Cantidad de ambientes usados para dormir
+201;ok;vivienda_tenencia;Tenencia
+202;ok;vivienda_grupos;Cantidad de grupos familiares que viven en esa casa
+203;ok;vivienda_miembros;Cuántas personas viven en esa casa?
+204;ok;jefx_hogar;Quién aporta el principal ingreso?
+205;ok;cant_menores_14;Cuántas son menores de 14 años?
+206;ok;cant_14_60;Cuántas tienen entre 14 y 60 años?
+207;ok;cant_mas_60;Cuántas tienen más de 60 años?
+208;ok;cant_perceptores;Cuántas personas aportan ingresos?
+209;combinar?;cant_perceptores_varon;Varones que aportan ingresos
+210;combinar?;cant_perceptores_mujer;Mujeres que aportan ingresos
+211;ok;cant_estudia;Cuántas personas están cursando algún nivel educativo actualmente?
+212;ok;menores_estudia;Hay personas que tengan entre 3 y 18 años que no estén cursando ningún nivel educativo?
+213;ok;discapacidad;En su casa, hay personas con algún tipo de discapacidad?
+214;ok;discapacidad_certificado;Tienen certificado de discapacidad?
+215;ok;discapacidad_pension;Cuentan con pensión por discapacidad?
+216;ok;nombre;NOmbre de la persona
+217;ok;telefono;Teléfono
+218;ok;residencia;Residencia:
+219;ok;cant_varones;Cuántos son varones?
+220;ok;cant_mujeres;Cuántos son mujeres?
+221;ok;cant_educ_inicial;Personas cursando preescolar
+222;ok;cant_educ_primaria;Personas cursando primaria
+223;ok;cant_educ_secundaria;Personas cursando secundaria
+224;ok;cant_educ_universitaria;Personas cursando universidad o terciario
+225;ok;barrio;Barrio
+226;ok;nro_orden_hogar;Número de orden del hogar encuestado
+227;ok;no;7.1 Le voy a mencionar distintas situaciones laborales y le voy a pedir que me diga si algún miembro del hogar trabaja de esa manera (leer opciones) [Ns/Nc]
+228;ok;no;14. En su hogar hay integrantes cursando [No hay personas cursando estudios formales]
+229;ok;atencion_salud_covid_tipo;12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?
+230;combinar?;pandemia_responsabilidad_control;8.4.3 B Quién debería hacer algo para mejorar esto?
+231;combinar?;pandemia_dificultades_conectividad;15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.1 Falta de conectividad / falta de datos para sostener las actividades virtuales – Si - No]
+232;combinar?;pandemia_dificultades_sin_dispositivos;15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.2 No tener dispositivos digitales para sostener las actividades – Si - No]
+233;combinar?;pandemia_dificultades_pocos_dispositivos;15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.3 Dispositivos digitales insuficientes para sostener las actividades de los distintos miembros del hogar – Si - No]
+234;combinar?;pandemia_dificultades_espacio;15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.4 Dificultades vinculadas a la falta de espacios adecuados para que los distintos miembros del hogar sostengan la continuidad – Si - No]
+235;combinar?;pandemia_dificultades_brecha_digital_tutores;15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.5 Dificultades en el conocimiento sobre dispositivos digitales de los padres y personas mayores para acompañar a quienes se están educando – Si - No]
+236;combinar?;pandemia_dificultades_economicas;15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.6 Dificultades económicas para sostener cuotas escolares – Si - No]
+237;combinar?;pandemia_dificultades_tiempo;15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.7 Dificultades de tiempo de los adultos para acompañar a los estudiantes del hogar – Si - No]
+238;combinar?;pandemia_dificultades_conectividad_otro;15.1 Ahora le voy a preguntar sobre las dificultades que hubo en su hogar para sostener la continuidad educativa durante la virtualidad. ¿Tuvieron alguna de estas dificultades? [15.1.8 Otras]

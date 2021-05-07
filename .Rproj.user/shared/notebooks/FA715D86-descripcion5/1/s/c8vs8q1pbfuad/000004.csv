@@ -1,0 +1,4 @@
+"0",""
+"0",""
+"0","kable_styling(kable(addmargins(table(datos$mejora_acceso_internet, datos$nse)"
+"0","), caption = ""Adquisición de nuevos paquetes o mejora en la conectividad a Internet en el último año según NSE (absolutos)""), latex_options = ""HOLD_position"")"

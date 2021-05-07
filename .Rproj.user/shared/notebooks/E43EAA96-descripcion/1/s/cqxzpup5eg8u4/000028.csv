@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos$dificultad_trabajo_4, datos$nse)), caption = ""Dificultad para el trabajo (4) (absolutos)""), latex_options = ""HOLD_position"")"

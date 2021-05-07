@@ -1,0 +1,5 @@
+"0","datos$`12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?`<-as.factor(datos$`12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?`)"
+"0","levels(datos$`12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?`)<-"
+"0","  c(""Dispensario barrial"", ""Dispensario barrial y Hospital público"", ""Hospital público"", ""Hospital público y Clínica privada"", ""Clínica privada"", ""A ningún lado"" )"
+"0",""
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?`, datos$nse),2),2),1),3), caption = ""Lugar de atención ante síntomas COVID (porcentajes según NSE)""), latex_options = ""HOLD_position"")"

@@ -1,0 +1,11 @@
+"0","for(i in 1:ncol(datos)){
+freq = datos %>% 
+  group_by(datos[,i]) %>% 
+  summarise(n = n(),
+            freq = n / nrow(datos)) %>% 
+  as.data.frame()
+assign(paste0(""freq"",i), freq)
+}
+"
+"2","Error in 1:ncol(datos) : argument of length 0
+"
