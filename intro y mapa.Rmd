@@ -1,0 +1,70 @@
+---
+title: "Intro"
+author: ""
+output: pdf_document
+---
+
+## Intro
+
+La unidad de análisis de la presente encuesta son los hogares. La selección de los hogares a encuestar se realizó de manera probabilística en dos etapas. En primer lugar se definieron cinco estratos para clasificar los barrios de la ciudad, con el requisito que las categorías fueran similares en la composición socioeconómica de la mayoría de los hogares de cada barrio. Para ello, se usaron tres criterios: el porcentaje de hogares con algunas de las NBI que detectó en censo 2010, la información provista por el RENABAP y el conocimiento del terreno de parte de los equipos de investigación que integran en proyecto. De cada estrato se eligieron aleatoriamente las coordenadas de un punto en el que se inició un recorrido sistemático preestablecido por las viviendas del barrio. El número de viviendas salteado fue fijado con anterioridad, según el tamaño del barrios.
+
+EDUARDO: ME PARECE QUE VAMOS A GENERAR UNA CONFUSIÓN ENTRE VIVIENDAS Y HOGARES AL FINAL DEL PÁRRAFO.
+
+De este modo, la ciudad fue clasificada en cinco zonas geográficas en las que las características socioeconómicas predominantes de los hogares son similares. Esta caracterización no anula la diversidad de hogares con características socioeconómicas que puedan escapar a la caracterización del barrio al cual pertenecen, sino que hace referencia a que la generalidad de los hogares que componen el barrio tienen dichas características. La Figura 1 muestra la clasificación de barrios resultante del proceso detallado anteriormente.
+
+```{r, include=F, echo=F, message=F}
+library(sf)
+barrios = st_read("barrios_cordoba.gpkg")
+tabla = read.csv("clasificacion.csv", header = T, sep = ";")
+library(dplyr)
+tabla = rename(tabla, Nombre = nombre)
+barrios = left_join(barrios, tabla, by = "Nombre")
+barrios = st_transform(barrios, 4326)
+barrios$categoria = ifelse(is.na(barrios$categoria)==T, "Sin clasificar", barrios$categoria)
+barrios$categoria <- factor(barrios$categoria, levels = c("Alto", "Medio-alto",
+                                                  "Medio", "Medio-bajo", "Bajo","Sin clasificar"))
+pal = c("#2B83BA","#ABDDA4","#FFFFBF","#FDAE61","#E53E3E","#99A3A4")
+library(osmdata)
+bbox <- getbb("Municipio de Cordoba, Argentina", format_out = "sf_polygon")
+vias_prim <- opq(bbox) %>% 
+  add_osm_feature(key = "highway", value = "primary") %>% 
+  osmdata_sf()
+vias_prim = vias_prim$osm_lines
+vias_autop <- opq(bbox) %>% 
+  add_osm_feature(key = "highway", value = c("motorway","trunk")) %>% 
+  osmdata_sf()
+vias_autop = vias_autop$osm_lines
+vias_autop2 <- opq(bbox) %>% 
+  add_osm_feature(key = "highway", value = "trunk") %>% 
+  osmdata_sf()
+vias_autop2 = vias_autop2$osm_lines
+vias_sec <- opq(bbox) %>% 
+  add_osm_feature(key = "highway", value = "secondary") %>% 
+  osmdata_sf()
+vias_sec = vias_sec$osm_lines
+rio = opq(bbox) %>% 
+  add_osm_feature(key = "waterway", value = "river") %>% 
+  osmdata_sf()
+rio = rio$osm_lines
+
+calles = rbind(vias_prim[,c("geometry")], vias_sec[,c("geometry")])
+library(tmap)
+tmap_mode("plot")
+mapa_pred <- tm_basemap(leaflet::providers$OpenStreetMap.Mapnik) +
+             tm_shape(barrios) +
+             tm_fill(col = c("categoria"), palette = pal) +
+             tm_borders(col = "#85929E", lwd = 0.1, alpha = 0.2) +
+             tm_layout(main.title= "Figura 1 - Clasificación de barrios según nivel socioeconómico.",  main.title.position = c('right', 'center'), main.title.size = 1) +
+             tm_legend(position = c("left", "bottom"),
+                    bg.color = "white",
+                    bg.alpha=1,
+                    width = .25, title.size = 1) +
+             tm_shape(vias_autop) + tm_lines(col = "black",lwd = 3)+
+             tm_shape(calles) + tm_lines(col = "black",lwd = 1)+
+             tm_shape(rio) + tm_lines(col = "#3498DB",lwd = 2) +
+  tm_compass(type = "4star", position=c("right", "top")) + tm_scale_bar()
+```
+
+```{r, echo=FALSE, fig.height=6, fig.width=10, message=FALSE, warning=FALSE, include=T}
+mapa_pred  
+```

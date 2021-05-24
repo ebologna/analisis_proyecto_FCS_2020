@@ -1,0 +1,9 @@
+"0","datos$composicion_edad<-
+  datos$hogar_con_mayores+10*datos$hogar_con_menores
+"
+"2","Error: Assigned data `datos$hogar_con_mayores + 10 * datos$hogar_con_menores` must be compatible with existing data.
+[31mx[39m Existing data has 615 rows.
+[31mx[39m Assigned data has 0 rows.
+[34mi[39m Only vectors of size 1 are recycled.
+[90mRun `rlang::last_error()` to see where the error occurred.[39m
+"

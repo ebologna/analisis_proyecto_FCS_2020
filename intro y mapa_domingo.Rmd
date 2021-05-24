@@ -1,0 +1,18 @@
+---
+title: "Intro"
+author: ""
+output: pdf_document
+---
+
+## Intro
+
+La unidad de análisis de la presente encuesta son los hogares. La selección de los hogares a encuestar se realizó de manera probabilística en dos etapas. En primer lugar se definieron cinco estratos para clasificar los barrios de la ciudad, con el requisito que las categorías fueran similares en la composición socioeconómica de la mayoría de los hogares de cada barrio. Para ello, se usaron tres criterios: el porcentaje de hogares con algunas de las NBI que detectó en censo 2010, la información provista por el RENABAP y el conocimiento del terreno de parte de los equipos de investigación que integran en proyecto. De cada estrato se eligieron aleatoriamente las coordenadas de un punto en el que se inició un recorrido sistemático preestablecido por las viviendas del barrio. El número de viviendas salteado fue fijado con anterioridad, según el tamaño del barrios.
+
+EDUARDO: ME PARECE QUE VAMOS A GENERAR UNA CONFUSIÓN ENTRE VIVIENDAS Y HOGARES AL FINAL DEL PÁRRAFO.
+
+De este modo, la ciudad fue clasificada en cinco zonas geográficas en las que las características socioeconómicas predominantes de los hogares son similares. Esta caracterización no anula la diversidad de hogares con características socioeconómicas que puedan escapar a la caracterización del barrio al cual pertenecen, sino que hace referencia a que la generalidad de los hogares que componen el barrio tienen dichas características. La Figura 1 muestra la clasificación de barrios resultante del proceso detallado anteriormente.
+
+
+```{r, echo=FALSE, fig.height=6, fig.width=10, message=FALSE, warning=FALSE, include=T}
+knitr::include_graphics(rep('C:/Users/juan/Documents/barrios/mapa_barrios.png'))
+```

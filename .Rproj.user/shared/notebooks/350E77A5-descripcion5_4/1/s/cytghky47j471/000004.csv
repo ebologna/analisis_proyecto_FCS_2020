@@ -1,0 +1,2 @@
+"0",""
+"0","kable_styling(kable(addmargins(table(datos$hacinamiento_critico, datos$nse)), caption = ""Hogares con hacinamiento crítico (absolutos según zona geográfica)""), latex_options = ""HOLD_position"")"

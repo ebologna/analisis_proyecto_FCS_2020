@@ -1,9 +1,13 @@
 {
     "sortOrder": [
         {
+            "columnIndex": 4,
+            "ascending": false
+        },
+        {
             "columnIndex": 2,
             "ascending": false
         }
     ],
-    "path": "G:/Mi unidad/proyecto_FCS_diciembre_2020/resultados"
+    "path": "~/GitHub/analisis_proyecto_FCS_2020"
 }
