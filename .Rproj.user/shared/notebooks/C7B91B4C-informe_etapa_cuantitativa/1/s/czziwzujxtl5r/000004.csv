@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos_jp$sexo_aportante, datos_jp$nse)), caption = ""Sexo del principal aportante de ingresos del hogar (absolutos)""), latex_options = ""HOLD_position"")"

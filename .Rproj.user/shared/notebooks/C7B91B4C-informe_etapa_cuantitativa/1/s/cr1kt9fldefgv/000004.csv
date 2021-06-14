@@ -1,0 +1,4 @@
+"0",""
+"0","kable_styling(kable(addmargins(table("
+"0","  tabla_covid_positivo_dificultades$value, tabla_covid_positivo_dificultades$nse)),"
+"0","  caption = ""Dificultades en el acceso a la salud en caso de Covid-19 positivo según NSE (absolutos)""), latex_options = ""HOLD_position"") %>% column_spec(1, width = ""10em"")"

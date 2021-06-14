@@ -1,0 +1,3 @@
+"0",""
+"0",""
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`12.4 ¿Algún integrante de su familia tuvo COVID19?`, datos$hacinamiento_critico),2),2),1),3), caption = ""Algún integrante tuvo COVID (porcentajes según hacinamiento crítico)""), latex_options = ""HOLD_position"")"

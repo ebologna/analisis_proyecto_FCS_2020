@@ -1,0 +1,1 @@
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$conformidad_trabajo_ahora, datos$nse),2),2),1),3), caption = ""Cambios en el trabajo de los integrantes del hogar en pandemia (porcentajes por NSE)""), latex_options = ""HOLD_position"")"

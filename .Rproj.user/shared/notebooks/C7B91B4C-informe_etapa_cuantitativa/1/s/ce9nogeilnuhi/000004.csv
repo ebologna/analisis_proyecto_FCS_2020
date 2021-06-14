@@ -1,0 +1,2 @@
+"0",""
+"0","kable_styling(kable(addmargins(table(datos$`13.1  ¿Considera que tuvo información suficiente sobre los programas y servicios de salud durante la cuarentena? (leer opciones)`, datos$nse)), caption = ""Información suficiente sobre los programas y servicios de salud durante la cuarentena según NSE (absolutos)""), latex_options = ""HOLD_position"")"

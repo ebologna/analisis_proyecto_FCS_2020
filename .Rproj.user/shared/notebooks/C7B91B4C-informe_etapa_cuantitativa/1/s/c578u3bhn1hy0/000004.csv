@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos$`14. En su hogar hay integrantes cursando [Secundario]`, datos$nse)), caption = ""Integrantes cursando secundario según NSE (absolutos)""), latex_options = ""HOLD_position"")"

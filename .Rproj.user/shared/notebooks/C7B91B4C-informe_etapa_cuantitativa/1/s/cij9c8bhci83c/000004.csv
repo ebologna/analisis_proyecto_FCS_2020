@@ -1,0 +1,2 @@
+"0",""
+"0","kable_styling(kable(addmargins(table(datos$`12.1 Durante la pandemia, ¿Ud o su familia tuvieron problemas de salud que demandaran atención médica?`, datos$nse)), caption = ""Necesidad de atención médica durante la pandemia según NSE (absolutos)""), latex_options = ""HOLD_position"")"

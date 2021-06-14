@@ -1057,3 +1057,4 @@ kable(prestaciones,
       caption = "Prestaciones estatales percibdas por integrantes del hogar durante el último mes (porcentajes de respuestas por NSE")
 
 table(datos$`5.1 En su hogar, tienen alguno de los dispositivos tecnológicos que voy a nombrarle? [Cámara de fotos]`)
+names(datos)

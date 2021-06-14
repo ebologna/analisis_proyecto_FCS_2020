@@ -1,0 +1,2 @@
+"0",""
+"0","kable_styling(kable(addmargins(table(datos$`12.5 Ante los síntomas de la enfermedad, a dónde  se atendieron?`, datos$nse)), caption = ""Lugar de atención ante síntomas COVID según NSE (absolutos)""), latex_options = ""HOLD_position"")"

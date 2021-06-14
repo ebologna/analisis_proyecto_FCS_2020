@@ -1,0 +1,4 @@
+"0","datos$`12.2. Y en ese contexto, ¿tuvieron dificultades para acceder a los servicios de salud?`<-as.factor(datos$`12.2. Y en ese contexto, ¿tuvieron dificultades para acceder a los servicios de salud?`)"
+"0","levels(datos$`12.2. Y en ese contexto, ¿tuvieron dificultades para acceder a los servicios de salud?`)<-c(""No"", ""Ns/Nc"", ""Si"")"
+"0",""
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`12.2. Y en ese contexto, ¿tuvieron dificultades para acceder a los servicios de salud?`, datos$nse),2),2),1),3), caption = ""Dificultad de acceso a servicios de salud durante la pandemia (porcentajes según NSE)""), latex_options = ""HOLD_position"")"

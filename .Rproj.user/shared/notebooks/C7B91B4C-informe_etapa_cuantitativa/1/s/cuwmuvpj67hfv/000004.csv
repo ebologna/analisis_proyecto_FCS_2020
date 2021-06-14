@@ -1,0 +1,5 @@
+"0",""
+"0",""
+"0","kable_styling(kable(addmargins(table("
+"0","  tabla_alcance_cobertura_salud$value, tabla_alcance_cobertura_salud$nse)),"
+"0","  caption = ""Alcance de la cobertura de salud según NSE (absolutos)""), latex_options = ""HOLD_position"") %>% column_spec(1, width = ""10em"")"

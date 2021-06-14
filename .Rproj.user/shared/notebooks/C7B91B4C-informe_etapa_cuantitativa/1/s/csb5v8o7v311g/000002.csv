@@ -1,0 +1,5 @@
+"0","datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`<-as.factor(datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`)"
+"0","levels(datos$`10.3 Cuando necesita atención médica, Ud o su familia se dirigen a ese centro de salud:`)<-c(""En transporte público con trasbordos (tomando más de un colectivo)"", ""En transporte público sin trasbordos"", ""En automóvil particular"", ""A pie"", ""En bicileta"", ""En motocicleta"", ""otros"")"
+"0",""
+"0",""
+"0",""

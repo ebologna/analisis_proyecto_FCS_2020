@@ -1,0 +1,1 @@
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(datos$`10.2 Nos podría indicar a qué distancia aproximada de su casa (en cuadras) se ubica el centro de salud que utiliza?`, datos$nse),2),2),1),3), caption = ""Distancia desde el domicilio hasta el centro de salud (porcentajes según NSE)""), latex_options = ""HOLD_position"")"

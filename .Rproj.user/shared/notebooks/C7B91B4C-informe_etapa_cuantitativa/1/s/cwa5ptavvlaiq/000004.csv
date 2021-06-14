@@ -1,0 +1,1 @@
+"0","kable_styling(kable(addmargins(table(datos$conformidad_trabajo_ahora, datos$nse)), caption = ""Cambios en el trabajo de los integrantes del hogar en pandemia (absolutos)""), latex_options = ""HOLD_position"")"

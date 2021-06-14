@@ -1,0 +1,1 @@
+"0","kable_styling(kable(100*round(addmargins(prop.table(addmargins(table(aux$dificultad, aux$condicion),2),2),1),3), caption = ""Dificultades para sostener la continuidad educativa (porcentajes por tipo de establecimiento)""), latex_options = ""HOLD_position"")"

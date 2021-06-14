@@ -1,0 +1,2 @@
+"0",""
+"0","kable_styling(kable(addmargins(table(datos$`Cuántas son menores de 14 años?`, datos$nse)), caption = ""Cantidad de menores de 14 años en el hogar según NSE (absolutos)""), latex_options = ""HOLD_position"")"

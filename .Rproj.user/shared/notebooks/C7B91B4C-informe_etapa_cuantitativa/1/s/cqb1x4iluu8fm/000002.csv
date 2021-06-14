@@ -1,0 +1,7 @@
+"0",""
+"0","datos$`Cuántas son menores de 14 años?`["
+"0","  datos$`Cuántas son menores de 14 años?`==""o"""
+"0","]<-0"
+"0",""
+"0",""
+"0","kable_styling(kable(cantidad_de_integrantes, caption = ""Media y mediana de la cantidad de integrantes del hogar según NSE""), latex_options = ""HOLD_position"")"

@@ -1,0 +1,2 @@
+"0",""
+"0","kable_styling(kable(addmargins(table(datos$composicion_edad, datos$nse)), caption = ""Composición de los hogares por grupos de edades convivientes según NSE (absolutos)""), latex_options = ""HOLD_position"")"

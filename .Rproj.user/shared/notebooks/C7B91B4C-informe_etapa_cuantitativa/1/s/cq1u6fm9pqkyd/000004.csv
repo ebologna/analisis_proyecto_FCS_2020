@@ -1,0 +1,2 @@
+"0",""
+"0","kable_styling(kable(addmargins(table(datos$emergencia, datos$nse)), caption = ""Disponibilidad de servicio médico de emergencia a domicilio por NSE (absolutos)""), latex_options = ""HOLD_position"")"

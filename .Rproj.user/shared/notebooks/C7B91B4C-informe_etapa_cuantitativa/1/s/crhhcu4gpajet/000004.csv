@@ -1,0 +1,3 @@
+"0",""
+"0","kable_styling(column_spec(kable(addmargins(table("
+"0","  datos$mayoria_mujeres, datos$composicion_edad)), caption = ""Composición de los hogares por género y grupos de edades convivientes (absolutos)""), 2:5, width=""2cm""), latex_options = ""HOLD_position"")"
