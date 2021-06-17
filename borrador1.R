@@ -1058,3 +1058,39 @@ kable(prestaciones,
 
 table(datos$`5.1 En su hogar, tienen alguno de los dispositivos tecnológicos que voy a nombrarle? [Cámara de fotos]`)
 names(datos)
+table(datos_jp$`Cuántas personas están cursando algún nivel educativo actualmente?`,
+      datos_jp$`Cuántas personas viven en esa casa?`)
+table(datos_jp$`Cuántas personas viven en esa casa?`)
+table(datos_jp$sexo_aportante)
+
+table(datos_jp$`Cuántas son menores de 14 años?`)
+
+
+datos_jp$`Cuántas son menores de 14 años?`[
+  datos_jp$`Cuántas son menores de 14 años?`=="o"]<-0
+datos_jp$`Cuántas son menores de 14 años?`[
+  is.na(datos_jp$`Cuántas son menores de 14 años?`)==TRUE]<-0
+datos_jp$`Cuántas son menores de 14 años?`<-
+  as.numeric(as.character(datos_jp$`Cuántas son menores de 14 años?`))
+
+datos_jp$menores<-"sin menores"
+datos_jp$menores[datos_jp$`Cuántas son menores de 14 años?`>0]<-"con menores"
+
+
+table(datos_jp$`Quién aporta el principal ingreso?`)
+table(datos_jp$menores, datos_jp$sexo_aportante)
+datos_jp$composicion_menores_sexo_aportante<-
+  ifelse(datos_jp$menores=="con menores" & datos_jp$sexo_aportante=="Mujer", 1,
+         ifelse(datos_jp$menores=="sin menores" & datos_jp$sexo_aportante=="Mujer", 2,
+                3))
+table(datos_jp$composicion_menores_sexo_aportante)
+datos_jp$composicion_menores_sexo_aportante<-as.factor(datos_jp$composicion_menores_sexo_aportante)
+levels(datos_jp$composicion_menores_sexo_aportante)<-c("aportante mujer con menores en la familia",
+                                                       "aportante mujer sin menores en la familia",
+                                                       "otras combinaciones")
+
+round(100*addmargins(prop.table(
+  table(
+    datos_jp$composicion_menores_sexo_aportante, datos_jp$nse),2),1),2)
+
+# para nombre de la columna: %>% column_spec(1, width = "10em")
