@@ -1832,3 +1832,53 @@ tabla_solicitud_ayuda_pandemia_abs
 Respecto a estrategias centradas en recurrencia a ayudas para afrontar las dificultades en la pandemia, reflejados en la Tabla 98, los mayores  porcentajes se concentran en *Ninguna*, con la mayor frecuencia en NSE Alto (90%) y la menor frecuencia en el NSE Bajo (43.6%).  
 De quienes sí recurrieron en búsqueda de ayudas, las mayores frecuencias en todos los sectores se encuentran en *Ayuda de familiares y amigos*: en los sectores Alto, Medio y Medio Alto se comparte un porcentaje de 7,4%, mientras que en Medio bajo se recurrió en un 23,4% y en Bajo a un 14,0% a familiares y amigos.  
 En segundo lugar, el NSE Bajo recurre en una frecuencia de dos dígitos a *Comedores y merenderos barriales* (14 %)  y a la *Escuela* (15,1%). El NSE Medio bajo recurre a *Comedores y merenderos* en un 1,6 y a la *Escuela* en 3,9%. Las otras cifras son poco significativas, salvo el NSE Bajo que recurre en un 5,8% a la *Parroquia*.  
+
+
+## Nuevas Tablas (ver dónde ubicar)
+
+
+```{r, echo=F, include=F, message=F}
+load("datos_nuevas_tablas.Rda")
+datos_nuevas_tablas$cant_menores_14 = as.numeric(datos_nuevas_tablas$cant_menores_14)
+datos_nuevas_tablas$ingresos_del_hogar = as.factor(datos_nuevas_tablas$ingresos_del_hogar)
+datos_nuevas_tablas$ingresos_del_hogar = factor(datos_nuevas_tablas$ingresos_del_hogar, levels = c("Menos de $25.000","Entre $25000 y 55.000","Entre $55.000 y $99.000","Entre $100.000 y $200.000","Más de $200.000"))
+
+### Tabla ingresos del hogar y cantidad promedio de personas según rango etario
+tabla1 = datos_nuevas_tablas %>%
+  filter(is.na(ingresos_del_hogar)==F) %>% 
+  group_by(ingresos_del_hogar) %>%
+  summarise("menos de 14 años" = mean(cant_menores_14, na.rm = T),
+            "de 15 a 60 años" = mean(cant_14_60, na.rm = T),
+            "más de 60 años" = mean(cant_mas_60, na.rm = T))
+tabla1
+
+### Tabla ingresos del hogar y cantidad promedio de perceptores de ingresos, por género
+tabla2 = datos_nuevas_tablas %>%
+  filter(is.na(ingresos_del_hogar)==F) %>% 
+  group_by(ingresos_del_hogar) %>%
+  summarise("cantidad total de perceptores" = mean(cant_perceptores, na.rm = T),
+            "cantidad de perceptores mujeres" = mean(cant_perceptores_mujer, na.rm = T),
+            "cantidad de perceptores varones" = mean(cant_perceptores_varon, na.rm = T))
+tabla2
+
+
+### Tabla ingresos del hogar y cantidad promedio de miembros de la "vivienda" (no hogar)
+tabla3 = datos_nuevas_tablas %>%
+  filter(is.na(ingresos_del_hogar)==F) %>% 
+  group_by(ingresos_del_hogar) %>%
+  summarise("miembros del hogar" = mean(vivienda_miembros, na.rm = T),
+            "cantidad de perceptores de ingresos" = mean(cant_perceptores, na.rm = T),
+            "ratio miembros por perceptorx" =  mean(vivienda_miembros, na.rm = T)/mean(cant_perceptores, na.rm = T))
+tabla3
+
+
+```
+```{r}
+options(width = 60)
+kable_styling(kable(tabla1, caption = "Ingresos del hogar y cantidad promedio de personas según rango etario"), latex_options = c("HOLD_position","scale_down"))
+
+kable_styling(kable(tabla2, caption = "Ingresos del hogar y cantidad promedio de perceptores de ingresos, por género"), latex_options = c("HOLD_position","scale_down"))
+
+kable_styling(kable(tabla3, caption = "Ingresos del hogar y cantidad promedio de miembros de la vivienda (no hogar)"), latex_options = c("HOLD_position","scale_down"))
+```
+
