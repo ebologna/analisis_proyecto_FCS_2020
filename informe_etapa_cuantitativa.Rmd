@@ -1874,11 +1874,26 @@ tabla3
 
 ```
 ```{r}
-options(width = 60)
 kable_styling(kable(tabla1, caption = "Ingresos del hogar y cantidad promedio de personas según rango etario"), latex_options = c("HOLD_position","scale_down"))
 
 kable_styling(kable(tabla2, caption = "Ingresos del hogar y cantidad promedio de perceptores de ingresos, por género"), latex_options = c("HOLD_position","scale_down"))
 
 kable_styling(kable(tabla3, caption = "Ingresos del hogar y cantidad promedio de miembros de la vivienda (no hogar)"), latex_options = c("HOLD_position","scale_down"))
+```
+
+Tipo de Hogares y  hacinamiento / Hogares monoparentales con jefatura femenina (mujeres con niñxs a cargo) y  hacinamiento solo un integrante de 14 o más + con menores de 14 + jefatura femenina (de los identificados como tales)
+
+```{r, include=T, echo=T}
+datos$aux = ifelse(is.na(datos$`Cuántas tienen más de 60 años?`)==T, 0, datos$`Cuántas tienen más de 60 años?`)
+datos$aux1 = ifelse(is.na(datos$`Cuántas tienen entre 14 y 60 años?`)==T, 0, datos$`Cuántas tienen entre 14 y 60 años?`)
+datos$`Cuántas son menores de 14 años?` = as.numeric(datos$`Cuántas son menores de 14 años?`)
+datos$aux2 = ifelse(is.na(datos$`Cuántas son menores de 14 años?`)==T, 0, datos$`Cuántas son menores de 14 años?`)
+datos$aux3 = datos$aux + datos$aux1
+
+datos$hogar_monomarental = ifelse(datos$aux2>0 & datos$aux3 > 0 & datos$`Varones que aportan ingresos`== 0 & datos$`Mujeres que aportan ingresos`== 1, 1, 0)
+
+table(datos$hogar_monomarental)
+
+
 ```
 
