@@ -1,0 +1,6 @@
+"0",""
+"0","tabla3$`miembros del hogar`<-round(tabla3$`miembros del hogar`,2)"
+"0","tabla3$`cantidad de perceptores de ingresos`<-round(tabla3$`cantidad de perceptores de ingresos`,2)"
+"0","tabla3$`ratio miembros por perceptorx`<-round(tabla3$`ratio miembros por perceptorx`,2)"
+"0",""
+"0",""

@@ -1,7 +1,0 @@
-"0","atencion_rel<-as.data.frame(rbind(atencion1_rel, atencion2_rel,
-                                  atencion3_rel, atencion4_rel,
-                                  atencion5_rel, atencion6_rel))
-"
-"2","Error in rbind(atencion1_rel, atencion2_rel, atencion3_rel, atencion4_rel,  : 
-  objeto 'atencion2_rel' no encontrado
-"

@@ -1,17 +1,16 @@
 library(dplyr)
 load("datos_depurados (1).Rda")
-datos$cant_perceptores
-datos$vivienda_miembros
-datos$ingresos_del_hogar
-datos$cant_menores_14
-datos$cant_menores_14 = as.numeric(datos$cant_menores_14)
-datos$ingresos_del_hogar = as.factor(datos$ingresos_del_hogar)
-datos$ingresos_del_hogar = factor(datos$ingresos_del_hogar, levels = c("Menos de $25.000",
+datos_2 = datos
+save(datos_2, file = "datos_depurados (1).Rda")
+rm(datos)
+datos_2$cant_menores_14 = as.numeric(datos_2$cant_menores_14)
+datos_2$ingresos_del_hogar = as.factor(datos_2$ingresos_del_hogar)
+datos_2$ingresos_del_hogar = factor(datos_2$ingresos_del_hogar, levels = c("Menos de $25.000",
                                           "Entre $25000 y 55.000","Entre $55.000 y $99.000",
                                           "Entre $100.000 y $200.000","M?s de $200.000"))
 
 ### Tabla ingresos del hogar y cantidad promedio de personas seg?n rango etario
-tabla1 = datos %>%
+tabla1 = datos_2 %>%
   filter(is.na(ingresos_del_hogar)==F) %>% 
   group_by(ingresos_del_hogar) %>%
   summarise("menos de 14 a?os" = mean(cant_menores_14, na.rm = T),
@@ -20,7 +19,7 @@ tabla1 = datos %>%
 tabla1
 
 ### Tabla ingresos del hogar y cantidad promedio de perceptores de ingresos, por g?nero
-tabla2 = datos %>%
+tabla2 = datos_2 %>%
   filter(is.na(ingresos_del_hogar)==F) %>% 
   group_by(ingresos_del_hogar) %>%
   summarise("cantidad total de perceptores" = mean(cant_perceptores, na.rm = T),
@@ -30,7 +29,7 @@ tabla2
 
 
 ### Tabla ingresos del hogar y cantidad promedio de miembros de la "vivienda" (no hogar)
-tabla3 = datos %>%
+tabla3 = datos_2 %>%
   filter(is.na(ingresos_del_hogar)==F) %>% 
   group_by(ingresos_del_hogar) %>%
   summarise("miembros del hogar" = mean(vivienda_miembros, na.rm = T),

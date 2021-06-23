@@ -1,0 +1,3 @@
+"0",""
+"0","# quito scale down agrego column_spec"
+"0","kable_styling(column_spec(kable(tabla1, caption = ""Ingresos del hogar y cantidad promedio de personas según rango etario""), 2:4, width=""3cm""), latex_options = ""HOLD_position"")"

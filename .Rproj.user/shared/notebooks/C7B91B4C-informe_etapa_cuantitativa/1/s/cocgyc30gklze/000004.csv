@@ -1,0 +1,5 @@
+"0",""
+"0",""
+"0","kable_styling(column_spec(kable(round(100*addmargins(prop.table("
+"0","  table("
+"0","    datos_jp$composicion_menores_sexo_aportante, datos_jp$nse),2),1),2), caption = ""Hogares cuya principal aportante es mujer con o sin menores en el hogar (porcentajes según NSE)""), 1, width=""5cm""), latex_options = ""HOLD_position"")"

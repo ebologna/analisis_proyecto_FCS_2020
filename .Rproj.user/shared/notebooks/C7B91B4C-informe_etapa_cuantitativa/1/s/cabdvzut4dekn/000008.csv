@@ -1,3 +1,0 @@
-"0",""
-"0","kable_styling(kable(addmargins(table(datos$tel_celular, datos$nse)"
-"0","), caption = ""Disponibilidad de teléfono celular según zona geográfica (absolutos)""), latex_options = ""HOLD_position"")"
